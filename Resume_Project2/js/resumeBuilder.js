@@ -12,7 +12,7 @@ var contacts = {
 
 var bio = {
 	"name": "James Wang",
-	"role": "Web Developer",
+	"role": "Full Stack Web Developer",
 	"contacts": contacts,
 	"skills": skills,
 	"picture": "images/myPicture.jpg"
@@ -22,6 +22,7 @@ var summary = "Web development specialist with experience in start-Ups as well a
 //list bio
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
+	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 	var formattedPicture = HTMLheaderPic.replace("%data%", bio.picture);
 	var formattedSummary = HTMLsummary.replace("%data%", summary);
 	
@@ -34,6 +35,7 @@ bio.display = function() {
 
 	$("#header").append(formattedPicture);
 	$("#header").append(formattedName);
+	$("#header").append(formattedRole);
 
 	$(".flex-box").append(formattedMobile);
 	$(".flex-box").append(formattedEmail);
@@ -57,11 +59,11 @@ bio.display = function() {
 		
 	// }
 
-	$("#skill").append(HTMLskillsStart);
-	for (i = 0; i < bio.skills.length; i ++) {
-		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-		$("#skill").append(formattedSkill);
-	}
+	// $("#skill").append(HTMLskillsStart);
+	// for (i = 0; i < bio.skills.length; i ++) {
+	// 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+	// 	$("#skill").append(formattedSkill);
+	// }
 }
 
 
@@ -108,20 +110,24 @@ projects.displayProjects = function() {
 		$("#projects").append(HTMLprojectStart);
 
 		var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-		$(".project-entry:last").append(formattedTitle);
-
+		var formattedDemo = HTMLprojectDemo.replace("%data%", projects.projects[project].demo);
+		var formattedGitHub = HTMLprojectGitHub.replace("%data%", projects.projects[project].gitHub);
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		$(".project-entry:last").append(formattedDates);
-
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+		
+		
+		$(".project-entry:last").prepend(formattedDemo);
+		$(".project-entry:last").prepend(formattedGitHub);
+		$(".project-entry:last").prepend(formattedTitle);
+		$(".project-entry:last").append(formattedDates);
 		$(".project-entry:last").append(formattedDescription);
 
-		if(projects.projects[project].demo.length > 0){
-			for (image in projects.projects[project].demo) {
-				var formattedUrl = HTMLprojectUrl.replace("%data%", projects.projects[project].demo[image]);
-				$(".project-entry:last").append(formattedUrl);
-			}
-		}
+		// if(projects.projects[project].demo.length > 0){
+		// 	for (url in projects.projects[project].demo) {
+		// 		var formattedUrl = HTMLprojectUrl.replace("%data%", projects.projects[project].demo[url]);
+		// 		$(".project-entry:last").append(formattedUrl);
+		// 	}
+		// }
 
 	}
 }
@@ -129,7 +135,7 @@ projects.displayProjects = function() {
 var work = {
 	"jobs": [
 		{
-			"employer": "Super Micro Computers, inc.",
+			"employer": "Super Micro Computers, Inc.",
 			"title": "Product Support Engineer",
 	 		"location": "San Jose, CA, US",
 	 		"dates": "December 2013 - January 2016",
@@ -146,14 +152,14 @@ function displayWork() {
 		//concat employee and title
 		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formattedEmployerTitle);
-	
 		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formatttedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		
+		$(".work-entry:last").prepend(formattedEmployer);
+		$(".work-entry:last").prepend(formattedLocation);
 		$(".work-entry:last").append(formattedDates);
-		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formattedTitle);
 		$(".work-entry:last").append(formatttedDescription);
 
 	}
@@ -196,11 +202,11 @@ education.displayEducation = function() {
 		var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 		var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-
-		$(".education-entry:last").append(formattedschoolName);
-		$(".education-entry:last").append(formattedschoolDegree);
+		
+		$(".education-entry:last").prepend(formattedschoolName);
+		$(".education-entry:last").prepend(formattedschoolLocation);
 		$(".education-entry:last").append(formattedschoolDates);
-		$(".education-entry:last").append(formattedschoolLocation);
+		$(".education-entry:last").append(formattedschoolDegree);
 		
 	}
 	

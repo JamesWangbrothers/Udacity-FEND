@@ -14,21 +14,25 @@ h6{
   /*color: white;*/
 }
 
+body{
+  background: black;
+}
+
+#role{
+  color: #ffab23;
+  font-style: italic;
+}
 .clear-fix {
   overflow: auto;
 }
 
-.education-entry,
-.work-entry,
-.project-entry,
-.skill-entry {
-  padding: 0 6%;
-
-}
-
 #header{
-  background-color: black;
+  background: black;
+  padding-bottom: 40px;
+  margin:0 auto;
 }
+
+
 
 .flex-box {
   display: -webkit-flex;
@@ -37,42 +41,51 @@ h6{
   flex-wrap: wrap;
   justify-content: space-around;
   float:right;
-  margin-right: 80px;
-  margin-top: 10px;
+  margin-right:65px;
+  margin-top: 15px;
 }
 
 .flex-container{
   display: -webkit-flex;
-  display: inline-flex;
+  display: flex;
   -webkit-flex-wrap:wrap;
   flex-wrap: wrap;
-  -webkit-align-content: center;
-  align-content: center;
-  width:100%;
+  width:83%;
   height:100%;
-  
+  margin: 0 auto;
+  position: relative;
+
 }
 
 .flex-item{
-  width:44%;
-  height:44%;
+  width:46%;
   margin: 0 auto;
+  margin-top: -12px;
+}
+
+#skill{
+  background: black;
+}
+#skill li{
+  color: white;
+
 }
 
 li {
   list-style-type: none;
+  color:#2187e7 ;
 }
 
 i{
   padding: 3px;
   margin-top: 40px;
+  background-clip: content-box;
 }
 
 h1 {
   margin-bottom: 0px;
-  font-size: 58px;
+  font-size: 55px;
   color: white;
-  padding-right: 20px;
   font-family: 'Exo', sans-serif;
 
 }
@@ -80,14 +93,16 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: black;
+  color: white;
   line-height: 29px;
-  border-bottom: solid 2px black;
+  background: black;
+  margin-bottom: 20px;
+
 }
 
 h3 {
   font-size: 20px;
-  color: #ffdd72;
+  color:#2187e7;
   line-height: 22px;
 }
 
@@ -98,7 +113,7 @@ h4 {
   line-height: 17px;
 }
 
-h2,
+
 h3,
 h4,
 h5 {
@@ -107,11 +122,12 @@ h5 {
 }
 
 img {
-  padding: 2% 50px;
-  width: 13%;
-  -webkit-border-radius: 50px;
-  border-radius: 50%;
+  padding: 20px 50px;
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 18%;
   float:left;
+  /*border-radius: 50%*/
 
 }
 
@@ -134,19 +150,45 @@ img {
   margin-top: 5px;
 
 }
+
+button {
+  -moz-box-shadow: 0px 1px 0px 0px #fff6af;
+  -webkit-box-shadow: 0px 1px 0px 0px #fff6af;
+  box-shadow: 0px 1px 0px 0px #fff6af;
+  background-color:#ffec64;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #ffaa22;
+  display:inline-block;
+  cursor:pointer;
+  color:#333333;
+  font-family:Arial;
+  font-size:14px;
+  font-weight:bold;
+  padding:1px 4px;
+  margin: 2px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #ffee66;
+  float: right;
+}
+button:hover {
+  background-color:#ffab23;
+}
+button:active {
+  position:relative;
+  top:1px;
+}
+
 a {
   /*color: #1199c3;*/
-  color: #ffdd72;
+  color: white;
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 0px;
   display: block;
   background-color: black;
 }
 
-/*#skills-h3 {
-  color: #f5ae23;
-  display: none;
-}*/
 
 .white-text {
   font-weight: bold;
@@ -158,13 +200,9 @@ a {
   clear:both;
 }
 
-.dark-gray {
-  background-color: #4a4a4a;
-}
-
-/*.center-content {
+.center-content {
   padding: 2.5% 5%;
-}*/
+}
 /* Media queries to handle various device widths */
 
 @media only screen and (max-width: 1024px) {
@@ -192,16 +230,16 @@ a {
 }
 
 #map {
-  display: block;
+  /*display: block;*/
   height: 100%;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
 }
 
 #mapDiv {
   height: 400px;
-  width: 100%;
+  width: 80%;
   padding-bottom: 5%;
-  border-bottom: solid 0.5px lightgray;
+  margin: 0 auto;
 }
 
 @media only screen and (min-width: 750px) {
@@ -230,11 +268,197 @@ a {
   color:#3B5998;  
 }
 .fa-map-marker {
-  color: #FF3333;
+  color: #DB302E;
 }
 #footer{
   text-align: center;
   margin: 10px;
+  color: white;
+}
+
+/*style skills*/
+
+#skills {
+    list-style: none;
+    padding-top: 30px;
+}
+
+#skills li {
+    margin-bottom: 50px;
+    background: #000;
+    height: 5px;
+    border-radius: 3px;
+    border-left: 1px solid #111;
+    border-top: 1px solid #111;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+#skills li em {
+    position: relative;
+    top: -30px;
+}
+
+.expand {
+    height: 1px;
+    margin: 2px 0;
+    background: #2187e7;
+    position: absolute;
+    box-shadow: 0px 0px 10px 1px rgba(0,198,255,0.4);
+}
+
+.html5 {
+    width: 43%;
+    -moz-animation: html5 2s ease-out;
+    -webkit-animation: html5 2s ease-out;
+}
+
+.css3 {
+    width: 28%;
+    -moz-animation: css3 2s ease-out;
+    -webkit-animation: css3 2s ease-out;
+}
+
+.jquery {
+    width: 8%;
+    -moz-animation: jquery 2s ease-out;
+    -webkit-animation: jquery 2s ease-out;
+}
+
+.javascript {
+    width: 11%;
+    -moz-animation: javascript 2s ease-out;
+    -webkit-animation: javascript 2s ease-out;
+}
+
+.python {
+    width: 15%;
+    -moz-animation: python 2s ease-out;
+    -webkit-animation: python 2s ease-out;
+}
+
+.git {
+    width: 35%;
+    -moz-animation: git 2s ease-out;
+    -webkit-animation: git 2s ease-out;
+}
+
+@-moz-keyframes html5 {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 43%;
+    };
+}
+
+@-moz-keyframes css3 {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 28%;
+    };
+}
+
+@-moz-keyframes jquery {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 8%;
+    };
+}
+
+@-moz-keyframes javascript {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 11%;
+    };
+}
+
+@-moz-keyframes python {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 15%;
+    };
+}
+
+@-moz-keyframes git {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 35%;
+    };
+}
+
+@-webkit-keyframes html5 {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 43%;
+    };
+}
+
+@-webkit-keyframes css3 {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 28%;
+    };
+}
+
+@-webkit-keyframes jquery {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 8%;
+    };
+}
+
+@-webkit-keyframes javascript {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 11%;
+    };
+}
+
+@-webkit-keyframes python {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 15%;
+    };
+@-webkit-keyframes git {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 35%;
+    };
 }
 
 

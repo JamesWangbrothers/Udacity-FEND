@@ -13,6 +13,7 @@ These are HTML strings. As part of the course, you'll be using JavaScript functi
 replace the %data% placeholder text you see in them.
 */
 var HTMLheaderName = '<h1 id="name">%data%</h1>';
+var HTMLheaderRole = '<h2 id="role">%data%</h2>';
 var HTMLheaderPic = '<img src=%data% alt="my head shot">';
 var HTMLsummary = '<h3>%data%</h3>';
 
@@ -26,25 +27,26 @@ var HTMLlocation = '<li><a href = "%data%"><i class="fa fa-map-marker fa-2x"></i
 
 
 
-var HTMLskillsStart = '<h3 id="skills-h3"></h3><ul id="skills"</ul>';
-var HTMLskills = '<li class="skill-entry"><span>%data%</span></li>';
+// var HTMLskillsStart = '<h3 id="skills-h3"></h3><ul id="skills"</ul>';
+// var HTMLskills = '<li class="skill-entry"><span>%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
 var HTMLworkEmployer = '<a href="#">%data%';
-var HTMLworkTitle = ' -- %data%</a>';
+var HTMLworkTitle = '<li> -- %data%</li></a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
 var HTMLworkDescription = '<li><br>%data%</li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
 var HTMLprojectTitle = '<a href="#">%data%</a>';
-var HTMLprojectDates = '<div class="date-text">%data%</div>';
+var HTMLprojectDates = '<li class="date-text">%data%</li>';
 var HTMLprojectDescription = '<li><br>%data%</li>';
-var HTMLprojectUrl = '<link src="%data%">';
+var HTMLprojectDemo = '<button class="button1" href="%data%">Demo</button>';
+var HTMLprojectGitHub = '<button class="button2" href="%data%">GitHub</button>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
 var HTMLschoolName = '<a href="#">%data%';
-var HTMLschoolDegree = ' -- %data%</a>';
+var HTMLschoolDegree = '<li> -- %data%</li></a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 
