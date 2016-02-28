@@ -1,106 +1,103 @@
 // making variables for bio
-var name = "James Wang";
-var role ="Web Developer";
-var skills = ["HTML5", "CSS3", "JavaScript", "Python", "Canvas"];
+var skills = ["HTML5", "CSS3", "JavaScript", "Python", "Canvas", "Git"];
 
 var contacts = {
 	"mobile": "510-944-9912",
 	"email": "jameswangishere@gmail.com",
-	"twitter": "@James_S_Wang",
-	"github": "JamesWangbrothers",
-	"blog": "www.facebook.com/jameswong300",
-	"location": "San Jose， CA" 
+	"linkedin": "https://www.linkedin.com/in/jameswangishere",
+	"github": "https://github.com/JamesWangbrothers",
+	"portfolio": "https://www.facebook.com/jameswong300",
+	"location": "#mapDiv"	
 };
 
 var bio = {
-	"name": name,
-	"role": role,
+	"name": "James Wang",
+	"role": "Web Developer",
 	"contacts": contacts,
-	"picture": "images/myPicture.jpg",
-	"welcomeMessage": "welcome to my resume page!",
-	"skills": skills
+	"skills": skills,
+	"picture": "images/myPicture.jpg"
 };
+
+var summary = "Web development specialist with experience in start-Ups as well as established operation leveraging expertise in responsive design, rendering, and problem solving to provide exceptional user support and user experience. Experience include managing and designing high profile websites.";
 //list bio
 bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
-	var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-	var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-	var formattedbioPic = HTMLbioPic.replace("%data%", bio.picture);
-	$("#header").prepend(formattedMessage);
-	$("#header").prepend(formattedRole);
-	$("#header").prepend(formattedName);
-	$("#header").prepend(formattedbioPic);
-
+	var formattedPicture = HTMLheaderPic.replace("%data%", bio.picture);
+	var formattedSummary = HTMLsummary.replace("%data%", summary);
+	
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	var formattedLinkedin = HTMLlinkedin.replace("%data%", bio.contacts.linkedin);
 	var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github); 
-	var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
+	var formattedPortfolio = HTMLportfolio.replace("%data%", bio.contacts.portfolio);
 	var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 
-	//There are two areas to add the contacts information
-	var idString = ["#topContacts","#footerContacts"];
-	for (var i = 0, id; i < idString.length; i ++) {
-		id = idString[i];
-		$(id).append(formattedMobile);
-		$(id).append(formattedEmail);
-		$(id).append(formattedTwitter);
-		$(id).append(formattedGithub);
-		$(id).append(formattedBlog);
-		$(id).append(formattedLocation);
-	}
+	$("#header").append(formattedPicture);
+	$("#header").append(formattedName);
 
-	$("#header").append(HTMLskillsStart);
+	$(".flex-box").append(formattedMobile);
+	$(".flex-box").append(formattedEmail);
+	$(".flex-box").append(formattedLinkedin);
+	$(".flex-box").append(formattedGithub);
+	$(".flex-box").append(formattedPortfolio);
+	$(".flex-box").append(formattedLocation);
+
+	$("#header").append(formattedSummary);
+
+	//There are two areas to add the contacts information
+	// var idString = ["#topContacts","#footerContacts"];
+	// for (var i = 0, id; i < idString.length; i ++) {
+	// 	id = idString[i];
+	// 	$(id).append(formattedMobile);
+	// 	$(id).append(formattedEmail);
+	// 	$(id).append(formattedLinkedin);
+	// 	$(id).append(formattedGithub);
+	// 	$(id).append(formattedPortfolio);
+	// 	$(id).append(formattedLocation);
+		
+	// }
+
+	$("#skill").append(HTMLskillsStart);
 	for (i = 0; i < bio.skills.length; i ++) {
 		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
-		$("#skills").prepend(formattedSkill);
+		$("#skill").append(formattedSkill);
 	}
 }
 
-var work = {
-	"jobs": [
-		{
-			"employer": "Super Micro Computers, inc.",
-			"title": "Product Support Engineer",
-	 		"location": "San Jose, CA, US",
-	 		"dates": "2013-2015",
-	 		"description": "customer problem solving and analyze on server computing systems" 
-		}
-	]
-};
 
-//display working experience
-function displayWork() {
-	for (job in work.jobs) {
-		// create new div for work experience
-		$("#workExperience").append(HTMLworkStart);
-		//concat employee and title
-		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-		var formattedEmployerTitle = formattedEmployer + formattedTitle;
-		$(".work-entry:last").append(formattedEmployerTitle);
-	
-		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-		var formatttedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-		$(".work-entry:last").append(formattedDates);
-		$(".work-entry:last").append(formatttedDescription);
+// $("#summary").append(HTMLsummaryStart);
 
-	}
-};
-
+var description_1 = ["mobile first responsive design", "bootstrap framework for UI design", "Javascript/Jquery for DOM modification", "Website Performance Optimization"];
+var description_2 = ["building features with APIs", "user experience optimization", "JSON packaging"];
 
 var projects = {
 	"projects": [
 	{
-		"title": "My profolio",
-		"dates": 2016,
-		"description": "building a personal user-interacting website for social networking and mobile UI/UX experoence",
-		"url": "http://bigbigz.com"
+		"title": "Profolio Website",
+		"dates": "March 2016",
+		"description": description_1,
+		"demo": "http://www.bigbigz.com",
+		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
 	},{
-		"title": "online resume",
-		"dates": 2016,
-		"description": "building a personal user-interacting website for social networking and mobile UI/UX experoence",
-		"url": "http://bigbigz.com"
+		"title": "Online Resume",
+		"dates": "Feb 2016",
+		"description": description_2,
+		"demo": "http://www.wildChild.com",
+		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
+
+	},{
+		"title": "Arcade Game",
+		"dates": "Feb 2016",
+		"description": description_2,
+		"demo": "http://www.wildChild.com",
+		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
+
+	},{
+		"title": "Start-Up Website Host",
+		"dates": "Feb 2016",
+		"description": description_2,
+		"demo": "http://www.carpsstreet.com",
+		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
 
 	}]
 };
@@ -119,33 +116,68 @@ projects.displayProjects = function() {
 		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		$(".project-entry:last").append(formattedDescription);
 
-		if(projects.projects[project].url.length > 0){
-			for (image in projects.projects[project].images) {
-				var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-				$(".project-entry:last").append(formattedIamge);
+		if(projects.projects[project].demo.length > 0){
+			for (image in projects.projects[project].demo) {
+				var formattedUrl = HTMLprojectUrl.replace("%data%", projects.projects[project].demo[image]);
+				$(".project-entry:last").append(formattedUrl);
 			}
 		}
 
 	}
 }
 
-//call the display function to display the projects:
+var work = {
+	"jobs": [
+		{
+			"employer": "Super Micro Computers, inc.",
+			"title": "Product Support Engineer",
+	 		"location": "San Jose, CA, US",
+	 		"dates": "December 2013 - January 2016",
+	 		"description": "customer problem solving and analyze on server computing systems" 
+		}
+	]
+};
+
+//display working experience
+function displayWork() {
+	for (job in work.jobs) {
+		// create new div for work experience
+		$("#workExperience").append(HTMLworkStart);
+		//concat employee and title
+		var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+		var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+		var formattedEmployerTitle = formattedEmployer + formattedTitle;
+		$(".work-entry:last").append(formattedEmployerTitle);
+	
+		var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+		var formatttedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+		$(".work-entry:last").append(formattedDates);
+		$(".work-entry:last").append(formattedLocation);
+		$(".work-entry:last").append(formatttedDescription);
+
+	}
+};
+
 
 var education = {
 	"schools": [{
-		"name": "University of Arkansas",
-		"location": "Fayetteville, AR, US",
-		"degree": "M.S.",
-		"major": "Electrical of Engineering",
-		"dates": 2013
+		"name": "Udacity",
+		"degree": "Front-End Web Development",
+		"location": "Online Credential",
+		"dates": "March 2016"
 	}, {
 		"name": "University of Arkansas",
-		"location": "Fayetteville, AR, US",
-		"degree": "B.A.",
-		"major": "Electrical of Engineering",
-		"dates": 2011
+		"degree": "M.S. in Electrical Engineering",
+		"location": "Fayetteville, AR",
+		"dates": "September 2013"
+	}, {
+		"name": "University of Arkansas",
+		"degree": "B.S. in Electrical Engineering",
+		"location": "Fayetteville, AR",
+		"dates": "August 2011"
 	}],
-	"onlineCourses": [{
+	"Courses": [{
 		"title": "Web Development Nanodegree",
 		"school": "Udacity",
 		"dates": 2016,
@@ -164,14 +196,12 @@ education.displayEducation = function() {
 		var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
 		var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 		var formattedschoolLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-		var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 
 		$(".education-entry:last").append(formattedschoolName);
 		$(".education-entry:last").append(formattedschoolDegree);
 		$(".education-entry:last").append(formattedschoolDates);
 		$(".education-entry:last").append(formattedschoolLocation);
-		$(".education-entry:last").append(formattedschoolMajor);
-
+		
 	}
 	
 
@@ -195,19 +225,17 @@ education.displayEducation = function() {
 
 
 // click button for internationlize names
-function inName(name){
+// function inName(name){
 
-	name = name.trim().split(" ");
-	name[1] = name[1].toUpperCase();
-	name[0] = name[0].slice(0,1).toUpperCase + name[0].slice(1).toLowerCase;
+// 	name = name.trim().split(" ");
+// 	name[1] = name[1].toUpperCase();
+// 	name[0] = name[0].slice(0,1).toUpperCase + name[0].slice(1).toLowerCase;
 
-	return name[0] + " " + name[1]
+// 	return name[0] + " " + name[1]
 
-}
-$("#main").append(internationalizeButton);
-inName(name);
-
-
+// }
+// $("#main").append(internationalizeButton);
+// inName(name);
 
 bio.display();
 displayWork();
