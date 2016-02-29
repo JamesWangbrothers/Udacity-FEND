@@ -18,9 +18,45 @@ body{
   background: url("/Users/sxw031/Desktop/Udacity/Udacity Projects/Resume_Project2/images/black-plain.jpg");
 }
 
-ul.bullet{
-  list-style-type: circle;
+.container-1{
+  width: 140px;
+  margin-top: 58px;
+  white-space: nowrap;
+  position: relative;
+  float: right;
+  padding:3px;
 }
+
+
+.container-1 input#search{
+  width: 140px;
+  height: 28px;
+  background: white;
+  border: none;
+  font-size: 11pt;
+  float: left;
+  color: #63717f;
+  padding-left: 0px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.container-1 input#search::-webkit-input-placeholder {
+   color: #65737e;
+}
+ 
+.container-1 input#search:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+ 
+.container-1 input#search::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+ 
+.container-1 input#search:-ms-input-placeholder {  
+   color: #65737e;  
+}
+  
 
 #role{
   color: #ffab23;
@@ -78,6 +114,7 @@ li {
 i{
   padding: 4px;
   margin-top: 40px;
+
 }
 
 h1 {
@@ -269,6 +306,9 @@ a {
 }
 .fa-map-marker {
   color: #DB302E;
+}
+.fa-search {
+  color: white;
 }
 #footer{
   text-align: center;
