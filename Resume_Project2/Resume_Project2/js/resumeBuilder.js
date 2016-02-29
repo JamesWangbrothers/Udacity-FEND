@@ -69,41 +69,36 @@ bio.display = function() {
 
 // $("#summary").append(HTMLsummaryStart);
 
+var description_1 = ["mobile first responsive design", "bootstrap framework for UI design", "Javascript/Jquery for DOM modification", "Website Performance Optimization"];
+var description_2 = ["building features with APIs", "user experience optimization", "JSON packaging"];
+
 var projects = {
 	"projects": [
 	{
 		"title": "Profolio Website",
 		"dates": "March 2016",
-		"bullet1": "mobile first responsive design",
-		"bullet2": "bootstrap framework for UI design",
-		"bullet3": "Javascript/Jquery for DOM modification",
+		"description": description_1,
 		"demo": "http://www.bigbigz.com",
 		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
 	},{
 		"title": "Online Resume",
 		"dates": "Feb 2016",
-		"bullet1": "building features with APIs",
-		"bullet2": "user experience optimization",
-		"bullet3": "JSON packaging",
+		"description": description_2,
 		"demo": "http://www.wildChild.com",
 		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
 
 	},{
 		"title": "Arcade Game",
 		"dates": "Feb 2016",
-		"bullet1": "building features with APIs",
-		"bullet2": "user experience optimization",
-		"bullet3": "Website Performance Optimization",
+		"description": description_2,
 		"demo": "http://www.wildChild.com",
 		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
 
 	},{
 		"title": "Start-Up Website Host",
 		"dates": "Feb 2016",
-		"bullet1": "building features with APIs",
-		"bullet2": "user experience optimization",
-		"bullet3": "Website Performance Optimization",
-		"demo": "http://www.carpstreet.com",
+		"description": description_2,
+		"demo": "http://www.carpsstreet.com",
 		"gitHub": "https://github.com/JamesWangbrothers/Udacity-FrontEndNanoDegree.git"
 
 	}]
@@ -118,17 +113,14 @@ projects.displayProjects = function() {
 		var formattedDemo = HTMLprojectDemo.replace("%data%", projects.projects[project].demo);
 		var formattedGitHub = HTMLprojectGitHub.replace("%data%", projects.projects[project].gitHub);
 		var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-		var formattedBullet1 = HTMLprojectDescription.replace("%data1%", projects.projects[project].bullet1);
-		var formattedBullet2 = formattedBullet1.replace("%data2%", projects.projects[project].bullet2);
-		var formatttedDescription = formattedBullet2.replace("%data3%", projects.projects[project].bullet3);
+		var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
 		
 		
 		$(".project-entry:last").prepend(formattedDemo);
 		$(".project-entry:last").prepend(formattedGitHub);
 		$(".project-entry:last").prepend(formattedTitle);
 		$(".project-entry:last").append(formattedDates);
-		$(".project-entry:last").append(formatttedDescription);
-		
+		$(".project-entry:last").append(formattedDescription);
 
 		// if(projects.projects[project].demo.length > 0){
 		// 	for (url in projects.projects[project].demo) {
@@ -164,13 +156,11 @@ function displayWork() {
 		var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 		var formatttedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 		
-		$(".work-entry:last").append(formattedEmployer);
+		$(".work-entry:last").prepend(formattedEmployer);
 		$(".work-entry:last").prepend(formattedLocation);
 		$(".work-entry:last").append(formattedDates);
 		$(".work-entry:last").append(formattedTitle);
 		$(".work-entry:last").append(formatttedDescription);
-		
-		
 
 	}
 };
@@ -221,21 +211,21 @@ education.displayEducation = function() {
 	}
 	
 
-	// for (school in education.onlineCourses) {
-	// 	// create new div for work experience
-	// 	//concat employee and title
-	// 	var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[school].title);
-	// 	var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[school].school);
-	// 	var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[school].dates);
-	// 	var formattedonlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[school].url);
+	for (school in education.onlineCourses) {
+		// create new div for work experience
+		//concat employee and title
+		var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[school].title);
+		var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[school].school);
+		var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[school].dates);
+		var formattedonlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[school].url);
 		
-	// 	$("#education").append(HTMLonlineClasses);
-	// 	$(".education-entry:last").append(formattedonlineTitle);
-	// 	$(".education-entry:last").append(formattedonlineSchool);
-	// 	$(".education-entry:last").append(formattedonlineDates);
-	// 	$(".education-entry:last").append(formattedonlineUrl);
+		$("#education").append(HTMLonlineClasses);
+		$(".education-entry:last").append(formattedonlineTitle);
+		$(".education-entry:last").append(formattedonlineSchool);
+		$(".education-entry:last").append(formattedonlineDates);
+		$(".education-entry:last").append(formattedonlineUrl);
 
-	// }
+	}
 	
 };
 

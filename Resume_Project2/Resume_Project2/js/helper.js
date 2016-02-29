@@ -31,31 +31,30 @@ var HTMLlocation = '<li><a href = "%data%"><i class="fa fa-map-marker fa-2x"></i
 // var HTMLskills = '<li class="skill-entry"><span>%data%</span></li>';
 
 var HTMLworkStart = '<div class="work-entry"></div>';
-var HTMLworkEmployer = '<a>%data%';
+var HTMLworkEmployer = '<a href="#">%data%';
 var HTMLworkTitle = '<li> -- %data%</li></a>';
 var HTMLworkDates = '<div class="date-text">%data%</div>';
 var HTMLworkLocation = '<div class="location-text">%data%</div>';
-var HTMLworkDescription = '<li>%data%</li>';
+var HTMLworkDescription = '<li><br>%data%</li>';
 
 var HTMLprojectStart = '<div class="project-entry"></div>';
-var HTMLprojectTitle = '<a>%data%</a>';
-var HTMLprojectDates = '<a class="date-text">%data%</a>';
-var HTMLprojectDemo = '<button><a class="demoButton" href="%data%">Demo</a></button>';
-var HTMLprojectGitHub = '<button><a class="gitHubButton" href="%data%">GitHub</a></button>';
-var HTMLprojectDescription = '<ul><br><li>%data1%</li><li>%data2%</li><li>%data3%</li></ul>';
-
+var HTMLprojectTitle = '<a href="#">%data%</a>';
+var HTMLprojectDates = '<li class="date-text">%data%</li>';
+var HTMLprojectDescription = '<li><br>%data%</li>';
+var HTMLprojectDemo = '<button class="button1" href="%data%">Demo</button>';
+var HTMLprojectGitHub = '<button class="button2" href="%data%">GitHub</button>';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a>%data%';
+var HTMLschoolName = '<a href="#">%data%';
 var HTMLschoolDegree = '<li> -- %data%</li></a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
 
 var HTMLonlineClasses = '<h3>Online Classes</h3>';
-var HTMLonlineTitle = '<a>%data%';
+var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' -- %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a>%data%</a>';
+var HTMLonlineURL = '<br><a href="#">%data%</a>';
 
 //var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
