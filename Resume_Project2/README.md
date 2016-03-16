@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ## How do I complete this project?
 
 1. Go to the [Javascript Basics course](https://www.udacity.com/course/ud804) and select "View Course Materials."
@@ -101,3 +102,7 @@ The resume has four distinct sections: work, education, projects and a header wi
 # Udacity-FrontEndNanoDegree
 Start Learning Web Development
 >>>>>>> 25bbeda11eec765c36149f1897950e7f0add4a26
+=======
+# online-resume
+Udacity nanoDegree project #2
+>>>>>>> 1a4b41bc509710464e51d70be06a5de891c56fa5
